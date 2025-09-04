@@ -18,5 +18,8 @@ runs:
   using: 'docker'
   image: 'docker://ghcr.io/karlis-vagalis/doxxer:0.7.0'
   args:
+    - sh
+    - -c
+    - ln -s /github/workspace /repo
     - doxxer
     - ${{ inputs.command }}
