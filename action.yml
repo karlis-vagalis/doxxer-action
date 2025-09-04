@@ -12,11 +12,15 @@ inputs:
   command:
     description: 'Doxxer command to run'
     required: false
-    default: "next"
+    default: 'next'
+
+outputs:
+  version:
+    description: 'The new SemVer version calculated by Doxxer.'
 
 runs:
   using: 'docker'
   image: 'ghcr.io/karlis-vagalis/doxxer:${{ inputs.version }}'
   args:
     - doxxer
-    - ${{ inputs.command }}
+    - ${{ inputs.command }} >> $GITHUB_OUTPUT
