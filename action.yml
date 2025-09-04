@@ -20,7 +20,7 @@ outputs:
 
 runs:
   using: 'docker'
-  image: 'ghcr.io/karlis-vagalis/doxxer:latest'
+  image: 'docker://ghcr.io/karlis-vagalis/doxxer:latest'
   args:
     - doxxer
     - ${{ inputs.command }} >> $GITHUB_OUTPUT
